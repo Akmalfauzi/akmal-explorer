@@ -1,0 +1,32 @@
+{
+  "name": "akmal-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "setup:env": "bun scripts/setup-env.ts",
+    
+    "dev:backend": "bun --filter backend --env-file=./apps/backend/.env dev",
+    "dev:frontend": "bun --filter frontend --env-file=./apps/frontend/.env dev",
+    
+    "build:frontend": "bun --filter frontend build",
+    "preview:frontend": "bun --filter frontend preview",
+    
+    "db:generate": "bun --filter backend --env-file=./apps/backend/.env db:generate",
+    "db:migrate": "bun --filter backend --env-file=./apps/backend/.env db:migrate",
+    "db:seed": "bun --filter backend --env-file=./apps/backend/.env db:seed",
+    
+    "test": "bun --filter '*' test",
+    "test:backend": "bun --filter backend test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

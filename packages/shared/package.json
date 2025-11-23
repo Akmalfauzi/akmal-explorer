@@ -1,0 +1,12 @@
+{
+  "name": "@repo/shared",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
